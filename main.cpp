@@ -26,7 +26,7 @@ int main() {
     assert(chair.getName() == "Ergonomic Office Chair");
     assert(chair.getPrice() == 199.99);
     assert(chair.getQuantity() == 5);
-    vector<double> properDims = {3,3,4};
+    properDims = {3,3,4};
     assert(chair.getDimensions() == properDims);
 
     chair.display();

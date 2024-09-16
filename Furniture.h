@@ -24,7 +24,7 @@ private:
 
 public:
     // Constructor to assign inventory ID, increment nextID, dimensions (length, width, height), and date added to inventory
-    Furniture(std::string n, double p, int q, double l, double h, double w, std::string sty, time_t dateAdded)
+    Furniture(std::string n, double p, int q, double l, double h, double w, std::string sty)
         : name(n), price(p), quantity(q), inventoryID(nextID++), style(sty) {
             dateAdded=std::chrono::system_clock::to_time_t(chrono::system_clock::now());
             vector<double> dims={l,h,w};
@@ -56,7 +56,8 @@ public:
         std::cout << "Name: " << name << ", Price: $" << price
                   << ", Quantity: " << quantity << std::endl;
         std::cout << "Style: " << style << std::endl;
-        std::cout << "Dimensions: " << dimensions << std::endl;
+        std::cout << "Dimensions: " << dimensions[0] << dimensions[1] << dimensions[2] << std::endl;
+        std::cout << "Record created at: " << dateAdded << endl;
     }
 };
 
