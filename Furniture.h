@@ -4,6 +4,8 @@
 #include <vector>
 #include <chrono>
 #include <ctime>
+#include <time.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -56,8 +58,9 @@ public:
         std::cout << "Name: " << name << ", Price: $" << price
                   << ", Quantity: " << quantity << std::endl;
         std::cout << "Style: " << style << std::endl;
-        std::cout << "Dimensions: " << dimensions[0] << dimensions[1] << dimensions[2] << std::endl;
-        std::cout << "Record created at: " << dateAdded << endl;
+        std::cout << "Dimensions: " << dimensions[0] << "x" << dimensions[1] <<"x"<< dimensions[2] << std::endl;
+        char buff[100];
+        std::cout << "Record created at: " << std::put_time(std::localtime(&dateAdded),"%A, %B %d, %Y %I:%M:%S %p")<< endl;
     }
 };
 
