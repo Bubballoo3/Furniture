@@ -23,11 +23,13 @@ private:
     static int nextID;  // Static class variable to generate unique IDs
 
 public:
-    // Constructor to assign inventory ID and increment nextID
-    Furniture(std::string n, double p, int q)
-        : name(n), price(p), quantity(q), inventoryID(nextID++) {
+    // Constructor to assign inventory ID, increment nextID, dimensions (length, width, height), and date added to inventory
+    Furniture(std::string n, double p, int q, double l, double h, double w, std::string sty, time_t dateAdded)
+        : name(n), price(p), quantity(q), inventoryID(nextID++), style(sty) {
             dateAdded=std::chrono::system_clock::to_time_t(chrono::system_clock::now());
-        }
+            vector<double> dims={l,h,w};
+            dimensions=dims;
+            }
 
     // Virtual destructor to ensure proper cleanup in derived classes
     virtual ~Furniture() {}
@@ -40,6 +42,7 @@ public:
     vector<double> getDimensions() const {return dimensions;} //getter for dimensions vector 
     string getStyle() const {return style;} 
     time_t getDateAdded() const {return dateAdded;}
+
     // Setters
     void setName(const std::string& n) { name = n; }
     void setPrice(double p) { price = p; }
@@ -52,6 +55,8 @@ public:
         std::cout << "Inventory ID: " << inventoryID << std::endl;
         std::cout << "Name: " << name << ", Price: $" << price
                   << ", Quantity: " << quantity << std::endl;
+        std::cout << "Style: " << style << std::endl;
+        std::cout << "Dimensions: " << dimensions << std::endl;
     }
 };
 
