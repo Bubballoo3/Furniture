@@ -1,0 +1,10 @@
+{
+    "makefile.makefilePath": "Makefile",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\C Disk Document\\Furniture",
+            "binaryPath": "c:\\C Disk Document\\Furniture\\furniture_test",
+            "binaryArgs": []
+        }
+    ]
+}
