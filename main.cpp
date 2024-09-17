@@ -1,12 +1,13 @@
 // main.cpp
 #include "Furniture.h"
+#include "Chair.h"
 #include <cassert>
 #include <vector>
 
 using namespace std;
 int main() {
     // Test 1: Create a Furniture object using the constructor
-    Furniture chair("Office Chair", 149.99, 10, 2,4,2,"Modern");
+    Chair chair("Office Chair", 149.99, 10, 2,4,2,"Modern",true,6,false,false);
     chair.display();
     // Test 2: Test getter methods
     assert(chair.getName() == "Office Chair");
@@ -14,6 +15,9 @@ int main() {
     assert(chair.getQuantity() == 10);
     vector<double> properDims={2,4,2};
     assert(chair.getDimensions() == properDims);
+    assert(chair.getStyle()=="Modern");
+    assert(chair.getHasArmrest()==true);
+    assert(chair.getNumberOfLegs() == 6);
     std::cout << "Getters passed." << std::endl;
 
     // Test 3: Test setter methods
