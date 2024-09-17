@@ -1,5 +1,4 @@
 // main.cpp
-#include "Furniture.h"
 #include "Chair.h"
 #include <cassert>
 #include <vector>
